@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher View</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href='../assests/css/style.css'> 
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <p>Result Management System</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex-justify-between">
+                <a href="/add-user" class="border-shadow">
+                    <span class="text-gradient">Add Record <i class="fa fa-user" aria-hidden="true"></i></span>
+                </a>
+            </div>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Roll No</th>
+                            <th>Name</th>
+                            <th>Birth Date</th>
+                            <th>Score</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% results.forEach((result,index) => { %>
+                            <tr class="align-middle">
+                                <td><%= result.rollNo %> </td>
+                                <td><%= result.name %> </td>
+                                <td><%= result.birthDate %> </td>
+                                <td><%= result.score%> </td>
+                                <td><a href="/update-user/<%= result._id %> " class="text-success"><i class="fa fa-edit fa-lg mx-1"></i></a>
+                                    <a href="/delete/api/users/<%= result._id %>" class="text-danger"><i class="fa fa-trash fa-lg mx-1"></i></a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+        </div>
+    </main>
+</body>
+</html>

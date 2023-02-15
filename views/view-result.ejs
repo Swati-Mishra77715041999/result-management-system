@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher View</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href='../assests/css/style.css'> 
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <p>Result Management System</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex-justify-between">
+                <div class="filter">
+                    <a href="teacher"><i class="fa fa-angle-double-left"></i>All Student Record</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Update Student Record</h2>
+                <span class="text-light">Use the below form to update Student Record</span>
+            </div>
+            <form method="post" id="update_user" action="/api/users/<%= result._id %>">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="rollNo" class="text-light">Roll No</label>
+                        <input type="number" name="rollNo" value="<%= result.rollNo %>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="text-light">Name</label>
+                        <input type="text" name="name" value="<%= result.name %>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthDate" class="text-light">Birth Date</label>
+                        <input type="date" name="birthDate" value="<%= result.birthDate %>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="score" class="text-light">Score</label>
+                        <input type="number" name="score" value="<%= result.score %>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
